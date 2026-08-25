@@ -39,7 +39,7 @@ export default function App() {
   const roundRobin = roundRobinDuels(n);
 
   return (
-    <div className="flex min-h-screen flex-col bg-ink">
+    <main className="flex min-h-screen flex-col bg-ink">
       <LedgerBar
         duelsSoFar={stage === "dueling" ? engine.duelsSoFar : undefined}
         estimate={stage === "dueling" ? estimate : undefined}
@@ -71,6 +71,6 @@ export default function App() {
           onRestart={restart}
         />
       )}
-    </div>
+    </main>
   );
 }

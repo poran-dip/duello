@@ -68,14 +68,24 @@ export function SetupScreen({
       {/* entry form */}
       <div className="rounded-lg border border-paper-line/40 bg-ink-soft/60 p-4 sm:p-5">
         <div className="flex flex-col gap-3 sm:flex-row">
+          <label htmlFor="participant" className="sr-only">
+            Participant name
+          </label>
           <input
+            id="participant"
+            name="participant"
             value={name}
             onChange={(e) => setName(e.target.value)}
             onKeyDown={(e) => e.key === "Enter" && addOne()}
             placeholder="Name"
             className="flex-1 rounded-md border border-paper-line/30 bg-paper/95 px-3.5 py-2.5 font-body text-sm text-ink placeholder:text-graphite/60 outline-none focus:border-gold focus:ring-2 focus:ring-gold/30"
           />
+          <label htmlFor="description" className="sr-only">
+            Description / notes
+          </label>
           <input
+            id="description"
+            name="description"
             value={notes}
             onChange={(e) => setNotes(e.target.value)}
             onKeyDown={(e) => e.key === "Enter" && addOne()}
@@ -104,7 +114,12 @@ export function SetupScreen({
 
         {pasteOpen && (
           <div className="mt-3 flex flex-col gap-2">
+            <label htmlFor="bulk-participants" className="sr-only">
+              Bulk add participants
+            </label>
             <textarea
+              id="bulk-participants"
+              name="bulk-participants"
               value={pasteText}
               onChange={(e) => setPasteText(e.target.value)}
               placeholder={

@@ -1,0 +1,54 @@
+@import "tailwindcss";
+
+@theme {
+  --color-ink: #14213d;
+  --color-ink-soft: #1f2e4d;
+  --color-paper: #f3ecdd;
+  --color-paper-dim: #e8dfc8;
+  --color-paper-line: #d7c9a8;
+  --color-graphite: #5c6470;
+  --color-gold: #c89b3c;
+  --color-gold-soft: #e0be72;
+  --color-moss: #5b7553;
+
+  --font-display: "Fraunces", ui-serif, Georgia, serif;
+  --font-body: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+}
+
+html {
+  color-scheme: light;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--color-ink);
+}
+
+::selection {
+  background-color: var(--color-gold);
+  color: var(--color-ink);
+}
+
+/* subtle paper grain, kept very quiet */
+.paper-texture {
+  background-image: radial-gradient(
+    circle at 1px 1px,
+    rgba(20, 33, 61, 0.055) 1px,
+    transparent 0
+  );
+  background-size: 14px 14px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    /* biome-ignore lint: reduced-motion accessibility */
+    animation-duration: 0.001ms !important;
+    /* biome-ignore lint: reduced-motion accessibility */
+    animation-iteration-count: 1 !important;
+    /* biome-ignore lint: reduced-motion accessibility */
+    transition-duration: 0.001ms !important;
+  }
+}

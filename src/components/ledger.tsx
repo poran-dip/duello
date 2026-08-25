@@ -24,14 +24,14 @@ export function LedgerBar({
       </div>
 
       {showTally && (
-        <div className="flex items-baseline gap-3 font-mono text-xs text-paper/70">
-          <span className="hidden sm:inline text-paper/40">duels logged</span>
+        <div className="flex items-baseline gap-3 font-mono text-xs text-paper/80">
+          <span className="hidden sm:inline text-paper/60">duels logged</span>
           <span className="text-sm text-gold">
             {String(duelsSoFar).padStart(2, "0")}
           </span>
-          <span className="text-paper/30">/ ~{estimate}</span>
+          <span className="text-paper/60">/ ~{estimate}</span>
           {typeof roundRobin === "number" && (
-            <span className="hidden text-paper/30 md:inline">
+            <span className="hidden text-paper/60 md:inline">
               (round robin would take {roundRobin})
             </span>
           )}

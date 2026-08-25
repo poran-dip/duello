@@ -35,7 +35,7 @@ export function DuelScreen({
       <p className="mb-1 font-mono text-xs uppercase tracking-[0.2em] text-gold">
         which one wins?
       </p>
-      <p className="mb-10 font-body text-xs text-paper/40">
+      <p className="mb-10 font-body text-xs text-paper/60">
         use ← / → or click a card
       </p>
 
@@ -66,7 +66,7 @@ export function DuelScreen({
             style={{ width: `${progressPct}%` }}
           />
         </div>
-        <p className="mt-2 text-center font-mono text-[11px] text-paper/35">
+        <p className="mt-2 text-center font-mono text-[11px] text-paper/60">
           roughly {Math.max(0, estimate - duelsSoFar)} duels likely remain
         </p>
       </div>

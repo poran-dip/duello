@@ -58,7 +58,7 @@ export function SetupScreen({
         <h1 className="font-display text-3xl font-semibold leading-tight text-paper sm:text-4xl">
           Who's competing for the ranking?
         </h1>
-        <p className="mt-3 max-w-lg text-sm leading-relaxed text-paper/60">
+        <p className="mt-3 max-w-lg text-sm leading-relaxed text-paper/80">
           Add everything you want ranked. You'll then judge a short series of
           one-on-one duels — no ballots, no scores, just "which one wins."
           Duello works out the full order from as few duels as the math allows.
@@ -106,7 +106,7 @@ export function SetupScreen({
         <button
           type="button"
           onClick={() => setPasteOpen((v) => !v)}
-          className="mt-3 flex items-center gap-1.5 font-mono text-xs text-paper/50 transition hover:text-gold"
+          className="mt-3 flex items-center gap-1.5 font-mono text-xs text-paper/60 transition hover:text-gold"
         >
           <ClipboardPaste className="h-3.5 w-3.5" />
           {pasteOpen ? "hide paste box" : "paste a whole list instead"}
@@ -143,14 +143,14 @@ export function SetupScreen({
       {/* entrant ledger list */}
       <div className="mt-6 flex-1">
         {participants.length === 0 ? (
-          <p className="rounded-lg border border-dashed border-paper-line/30 px-4 py-8 text-center font-mono text-xs text-paper/35">
+          <p className="rounded-lg border border-dashed border-paper-line/30 px-4 py-8 text-center font-mono text-xs text-paper/60">
             no entrants yet — add at least two to begin
           </p>
         ) : (
           <ol className="divide-y divide-paper-line/15">
             {participants.map((p, i) => (
               <li key={p.id} className="group flex items-center gap-4 py-2.5">
-                <span className="w-6 shrink-0 text-right font-mono text-xs text-paper/30">
+                <span className="w-6 shrink-0 text-right font-mono text-xs text-paper/60">
                   {String(i + 1).padStart(2, "0")}
                 </span>
                 <div className="min-w-0 flex-1">
@@ -158,7 +158,7 @@ export function SetupScreen({
                     {p.name}
                   </p>
                   {p.notes && (
-                    <p className="truncate font-body text-xs text-paper/45">
+                    <p className="truncate font-body text-xs text-paper/60">
                       {p.notes}
                     </p>
                   )}
@@ -166,7 +166,7 @@ export function SetupScreen({
                 <button
                   type="button"
                   onClick={() => remove(p.id)}
-                  className="shrink-0 rounded p-1 text-paper/30 opacity-0 transition hover:text-gold group-hover:opacity-100"
+                  className="shrink-0 rounded p-1 text-paper/60 opacity-0 transition hover:text-gold group-hover:opacity-100"
                   aria-label={`Remove ${p.name}`}
                 >
                   <X className="h-4 w-4" />
@@ -179,7 +179,7 @@ export function SetupScreen({
 
       {/* footer / begin */}
       <div className="sticky bottom-0 mt-8 flex items-center justify-between gap-4 border-t border-paper-line/20 bg-ink pt-5">
-        <p className="font-mono text-xs text-paper/40">
+        <p className="font-mono text-xs text-paper/60">
           {n >= 2
             ? `${n} entrants · expect ~${minimumPossibleDuels(n)}-${estimatedRoundUp(n)} duels, worlds away from the ${roundRobinDuels(n)} a round robin needs`
             : "add at least two entrants"}

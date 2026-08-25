@@ -35,7 +35,7 @@ export function ResultsScreen({
         <h1 className="font-display text-3xl font-semibold leading-tight text-paper sm:text-4xl">
           The full order, decided.
         </h1>
-        <p className="mt-3 text-sm leading-relaxed text-paper/60">
+        <p className="mt-3 text-sm leading-relaxed text-paper/80">
           Settled in {duelsUsed} duel{duelsUsed === 1 ? "" : "s"} — every
           remaining relationship followed from transitivity, so nothing else
           needed to be asked.
@@ -53,12 +53,12 @@ export function ResultsScreen({
                 {p.name}
               </p>
               {p.notes && (
-                <p className="truncate font-body text-xs text-paper/45">
+                <p className="truncate font-body text-xs text-paper/60">
                   {p.notes}
                 </p>
               )}
             </div>
-            <span className="shrink-0 font-mono text-xs text-paper/30">
+            <span className="shrink-0 font-mono text-xs text-paper/60">
               #{String(i + 1).padStart(2, "0")}
             </span>
           </li>
@@ -95,8 +95,8 @@ function RankBadge({ rank }: { rank: number }) {
   if (rank === 1)
     return <Trophy className="h-5 w-5 text-gold" strokeWidth={1.75} />;
   if (rank === 2)
-    return <Medal className="h-5 w-5 text-paper/70" strokeWidth={1.75} />;
+    return <Medal className="h-5 w-5 text-paper/80" strokeWidth={1.75} />;
   if (rank === 3)
     return <Award className="h-5 w-5 text-[#B08D57]" strokeWidth={1.75} />;
-  return <span className="font-mono text-xs text-paper/30">{rank}</span>;
+  return <span className="font-mono text-xs text-paper/60">{rank}</span>;
 }
